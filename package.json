@@ -1,0 +1,28 @@
+{
+    "name": "alfred-workflow-pangu",
+    "version": "1.0.0",
+    "main": "./dist/index.js",
+    "scripts": {
+        "build": "rimraf dist && rollup -c rollup.config.ts --configPlugin typescript",
+        "pack": "pkg -t macos -o ./dist/pangu ./dist/index.js",
+        "dev": "rimraf dist && tsc --watch",
+        "bundle": "sh ./build.sh"
+    },
+    "author": "Allen Lawrence",
+    "license": "MIT",
+    "dependencies": {
+        "pangu": "^4.0.7"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^25.0.7",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-typescript": "^11.1.5",
+        "@types/node": "^20.8.8",
+        "@types/pangu": "^4.0.1",
+        "pkg": "^5.8.1",
+        "rimraf": "^5.0.5",
+        "rollup": "^4.1.4",
+        "tslib": "^2.6.2",
+        "typescript": "^5.2.2"
+    }
+}
